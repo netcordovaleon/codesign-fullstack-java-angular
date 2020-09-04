@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #E4E1DF !important;
+  font-family: sans-serif !important;
+}
+
+.btn-primary {
+  background-color: #1E81CE !important;
+}
+
+.btn-secondary {
+  background-color: #9BC9FF !important;
+}
+
+.title-ciber {
+  color: #1E81CE !important;
+}
+
+.bg-light {
+  background: #9BC9FF !important;
+}
+
+.product-name {
+  font-size: 16px;
+}
+
+.product-description {
+  color: gray !important;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.product-price {
+  font-size: 25px;
+  font-weight: bold;
+}
