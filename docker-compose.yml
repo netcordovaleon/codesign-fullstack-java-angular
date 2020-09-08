@@ -7,7 +7,7 @@ services:
     - 1433:1433
     environment:
       ACCEPT_EULA: Y
-      SA_PASSWORD: Cordova2020_
+      SA_PASSWORD: AQUI_LA_CONTRASENIA_DE_BD
     networks:
       - fullstack
     volumes:
@@ -35,7 +35,7 @@ services:
     environment:
       - DATABASE_HOST=sqlserver
       - DATABASE_USER=sa
-      - DATABASE_PASSWORD=Cordova2020_
+      - DATABASE_PASSWORD=AQUI_LA_CONTRASENIA_DE_BD
       - DATABASE_NAME=springexample  
       - DATABASE_PORT=1433
 networks:

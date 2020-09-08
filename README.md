@@ -36,7 +36,7 @@ El servicio Docker BACKEND expone el puerto 8080, al ejecutar debe validar q est
     environment:
       - DATABASE_HOST=sqlserver
       - DATABASE_USER=sa
-      - DATABASE_PASSWORD=Cordova2020_
+      - DATABASE_PASSWORD=AQUI_LA_CONTRASENIA_DE_BD
       - DATABASE_NAME=springexample  
       - DATABASE_PORT=1433
 ```
@@ -50,7 +50,7 @@ El servicio Docker DATABASE es el unico que contiene un VOLUMES, ya que necesita
     - 1433:1433
     environment:
       ACCEPT_EULA: Y
-      SA_PASSWORD: Cordova2020_
+      SA_PASSWORD: AQUI_LA_CONTRASENIA_DE_BD
     networks:
       - fullstack
     volumes:
