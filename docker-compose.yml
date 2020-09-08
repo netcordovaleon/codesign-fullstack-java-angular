@@ -10,8 +10,8 @@ services:
       SA_PASSWORD: Cordova2020_
     networks:
       - fullstack
-    #volumes:
-    #  - C:\Users\Owen\DockerVolumes\sqlserver:/var/opt/mssql/data
+    volumes:
+      - ./database:/var/opt/mssql/data
   frontend: 
     container_name: frontend
     build: ./frontend/website 
