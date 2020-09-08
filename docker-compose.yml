@@ -1,0 +1,42 @@
+version: "3.1"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    container_name: sqlserver2019
+    ports:
+    - 1433:1433
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: Cordova2020_
+    networks:
+      - fullstack
+    #volumes:
+    #  - C:\Users\Owen\DockerVolumes\sqlserver:/var/opt/mssql/data
+  frontend: 
+    container_name: frontend
+    build: ./frontend/website 
+    ports: 
+    - '4200:4200'
+    command: > 
+      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200 --disable-host-check"
+    networks:
+      - fullstack
+    depends_on:
+      - backend      
+  backend:
+    container_name: backend
+    build: ./backend/microservices
+    ports:
+      - "8080:8080"
+    networks:
+      - fullstack
+    depends_on:
+      - sqlserver
+    environment:
+      - DATABASE_HOST=sqlserver
+      - DATABASE_USER=sa
+      - DATABASE_PASSWORD=Cordova2020_
+      - DATABASE_NAME=springexample  
+      - DATABASE_PORT=1433
+networks:
+  fullstack:

@@ -11,7 +11,6 @@
 	<groupId>pe.codesign.rest</groupId>
 	<artifactId>microservices</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>microservices</name>
 	<description>Demo for microservices in SpringBoot</description>
 
 	<properties>
