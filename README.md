@@ -7,6 +7,26 @@ Proyecto Modelo donde se aplicarán las siguientes tecnologias:
 - Docker Files
 - Docker Compose
 
+Que debe tener instalado:
+- Docker
+- Docker-Compose
+- Java 8
+- IDE desarrollo (En mi ejemplo utilice IntelliJ)
+- NodeJS
+- Angular CLI
+
+Para ejecutar todos los proyectos debe ejecutar el siguiente comando
+```cmd
+docker-compose up
+```
+
+Para detener la ejecución de todos los proyectos puede ejecutar el siguiente comando
+
+```cmd
+docker-compose down
+```
+
+
 El servicio Docker FRONTEND expone el puerto 4200, al ejecutar debe validar q este puerto se encuentre libre.
 ```yaml
   frontend: 

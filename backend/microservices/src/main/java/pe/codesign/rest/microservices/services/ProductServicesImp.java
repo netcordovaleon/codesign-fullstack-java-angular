@@ -51,4 +51,13 @@ public class ProductServicesImp implements ProductServices {
        ProductDTO productDTO = ObjectMapperUtil.map(product.get(), ProductDTO.class);
        return productDTO;
     }
+
+    @Override
+    public OperatorResponseDTO Delete(int id) throws MicroServicesException {
+        Optional<Product> product = _productRepository.findById(id);
+        if (!product.isPresent())
+            throw new MicroServicesException(ConstantServices.NO_DATA_FOUND);
+        _productRepository.delete(product.get());
+        return new OperatorResponseDTO(ConstantServices.SUCCESS_MESSAGE, product);
+    }
 }

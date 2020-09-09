@@ -9,7 +9,7 @@ import pe.codesign.rest.microservices.services.ProductServices;
 import pe.codesign.rest.microservices.util.MicroServicesException;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/v1")
 public class ProductController {
@@ -35,5 +35,10 @@ public class ProductController {
     @PostMapping("/product")
     public OperatorResponseDTO Save(@RequestBody ProductDTO product){
         return _productServices.Save(product);
+    }
+
+    @DeleteMapping("/product/{id}")
+    public OperatorResponseDTO Save(@PathVariable int id) throws MicroServicesException {
+        return _productServices.Delete(id);
     }
 }

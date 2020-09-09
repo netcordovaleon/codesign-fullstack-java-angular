@@ -14,4 +14,6 @@ public interface ProductServices {
     OperatorResponseDTO Save(ProductDTO product);
     OperatorResponseDTO Update(ProductDTO product);
     ProductDTO GetById(int id) throws MicroServicesException;
+    OperatorResponseDTO Delete(int id) throws MicroServicesException;
+
 }

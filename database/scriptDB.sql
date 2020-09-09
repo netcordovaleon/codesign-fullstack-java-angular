@@ -30,3 +30,27 @@ go
 
 select * from tm_products
 go
+
+create table tm_users (
+	codusu int primary key identity(1,1),
+	nomusu varchar(200),
+	passusu varbinary(max)
+)
+go
+
+insert into tm_users(nomusu, passusu) values ('cibertec01', PWDENCRYPT('123456'))
+go
+
+select * from tm_users where nomusu = 'cibertec01' and PWDCOMPARE('1234565', passusu) = 1
+go
+
+create proc usp_access
+@nomusu varchar(200),
+@passusu varchar(200)
+as
+begin
+	set nocount on
+	select codusu, nomusu from tm_users where nomusu = @nomusu and PWDCOMPARE(@passusu, passusu) = 1
+end
+
+exec usp_access 'cibertec01', '123456'
