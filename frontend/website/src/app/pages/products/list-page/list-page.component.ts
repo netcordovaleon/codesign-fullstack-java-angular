@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../../../shared/services/product.services';
+import { IProductModel } from 'src/app/shared/models/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-page',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPageComponent implements OnInit {
 
-  constructor() { }
+  data: IProductModel[];
+
+
+  constructor(private productsService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
+
+    this.getAllProducts();
+  }
+
+  private getAllProducts(): void {
+    this.productsService.getAllProducts().subscribe((resp: IProductModel[]) => {
+      this.data = resp;
+    });
+  }
+
+  agregarNuevoProducto(): void {
+    this.router.navigate(['/new-product']);
   }
 
 }

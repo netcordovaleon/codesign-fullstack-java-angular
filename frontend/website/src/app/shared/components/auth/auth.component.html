@@ -1,17 +1,27 @@
-<form>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div class="text-center mb-0">
-    <img class="mb-2" src="assets/images/cibertec.png" alt="" style="width: 120px; height: 120px;" >
+    <img class="mb-2" src="assets/images/cibertec.png" alt="" style="width: 120px; height: 120px;">
   </div>
   <div class="form-label-group">
     <label>Usuario:</label>
-    <input type="email" class="form-control" placeholder="Ingrese su usuario">
+    <input type="email" class="form-control" placeholder="Ingrese su usuario" formControlName="name">
+    <div *ngIf="loginForm.controls['name'].touched && loginForm.controls['name'].invalid" class="text-danger">
+      <div *ngIf="loginForm.controls['name'].errors && loginForm.controls['name'].errors.required">
+        El usuario es obligatorio
+      </div>
+    </div>
   </div>
 
   <div class="form-label-group mb-3">
     <label>Password:</label>
-    <input type="password" class="form-control" placeholder="Ingrese su password">
+    <input type="password" class="form-control" placeholder="Ingrese su password" formControlName="password">
+    <div *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid" class="text-danger">
+      <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].errors.required">
+        El usuario es obligatorio
+      </div>
+    </div>
   </div>
 
-  <button class="btn btn-primary btn-block" type="submit">Acceder</button>
+  <button class="btn btn-primary btn-block" type="submit" [disabled]="!loginForm.valid">Acceder</button>
   <p class="mt-5 mb-3 text-muted text-center">© 2020</p>
 </form>

@@ -1,0 +1,49 @@
+<h2 class="title-ciber mb-4">Nuevo Producto</h2>
+
+<div class="card">
+  <div class="card-body">
+
+
+
+    <form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
+      <div class="row mb-3">
+        <div class="col-md-12">
+
+          <div class="row">
+            <div class="col-md-6">
+              <label>Nombre</label>
+              <input class="form-control" placeholder="Ingrese nombre del producto" formControlName="name" />
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <label>Descripción</label>
+              <textarea class="form-control" placeholder="Ingrese descripción del producto" formControlName="description"></textarea>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-4">
+              <label>Unidad Medida</label>
+              <input class="form-control" placeholder="Ingrese unidad de medida del producto" formControlName="unitOfMeasure" />
+            </div>
+            <div class="col-md-4">
+              <label>Stock</label>
+              <input class="form-control" placeholder="Ingrese stock del producto" formControlName="stock" />
+            </div>
+            <div class="col-md-4">
+              <label>Precio</label>
+              <input class="form-control" placeholder="Ingrese precio del producto" formControlName="unitPrice" />
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12 text-center">
+              <button class="btn btn-primary" [disabled]="!newProductForm.valid"><i class="fa fa-plus"></i> Agregar</button>&nbsp;
+              <button class="btn btn-secondary" (click)="goToList()"><i class="fa fa-close"></i> Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

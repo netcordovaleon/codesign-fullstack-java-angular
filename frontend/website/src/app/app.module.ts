@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeLayoutModule } from './layout/home-layout/home-layout.module';
 import { LoginLayoutModule } from './layout/login-layout/login-layout.module';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +14,8 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     AppRoutingModule,
     BrowserModule,
     HomeLayoutModule,
-    LoginLayoutModule
+    LoginLayoutModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

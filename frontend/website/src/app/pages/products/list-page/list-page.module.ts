@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListPageComponent } from './list-page.component';
 import { ListPageRoutingModule } from './list-page-routing.module';
+import { ItemProductModule } from './item-product/item-product.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { ListPageRoutingModule } from './list-page-routing.module';
   ],
   imports: [
     CommonModule,
-    ListPageRoutingModule
+    ListPageRoutingModule,
+    ItemProductModule
   ]
 })
 export class ListPageModule { }

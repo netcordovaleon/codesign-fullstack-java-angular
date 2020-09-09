@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="text-center mb-2">
+          <img src="assets/images/cibertec.png" class="rounded" alt="No se encontro ningun producto"
+            style="width: 50px; height: 50px;">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-9">
+            <span class="product-name">[{{ data.code }}] {{ data.name }}</span>
+            <p class="product-description">{{ data.description }}</p>
+          </div>
+          <div class="col-md-3 align-text-bottom">
+            <span class="product-price align-text-bottom">{{ data.unitPrice | currency:'S/ ' }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <button class="btn btn-success"><i class="fa fa-edit"></i></button>&nbsp;
+            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
