@@ -10,7 +10,7 @@ Proyecto Modelo donde se aplicarán las siguientes tecnologias:
 Que debe tener instalado:
 - Docker
 - Docker-Compose
-- Java 8
+- JDK 8
 - IDE desarrollo (En mi ejemplo utilice IntelliJ)
 - NodeJS
 - Angular CLI
